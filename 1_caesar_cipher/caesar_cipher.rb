@@ -15,7 +15,7 @@ def caesar_cipher(string, shift)
 
     # upcase = letter.upcase == letter
 
-    # if alphabet.any?(letter.downcase)
+    if alphabet.any?(letter.downcase)
       index = alphabet.find_index(letter.downcase).to_i
       modified_index = index + shift
 
@@ -24,10 +24,10 @@ def caesar_cipher(string, shift)
       if modified_index > alphabet_length
         modified_index = modified_index - alphabet_length
       end
-      alphabet[modified_index]
+     next alphabet[modified_index]
       
-    # end
-    # letter
+    end
+    letter
   end.join
 end
 
