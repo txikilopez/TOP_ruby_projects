@@ -8,7 +8,7 @@ def caesar_cipher(string, shift)
 
   string_array.map do |letter|
     is_upcase = letter.upcase == letter
-    if alphabet.any?(letter.downcase)
+    if alphabet.include?(letter.downcase)
       index = alphabet.find_index(letter.downcase).to_i
       modified_index = index + shift
 
