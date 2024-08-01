@@ -19,4 +19,5 @@ puts "Enter a list of words separated by a comma"
 dictionary = gets.chomp
 dictionary = dictionary.split(", ")
 
+p "the phrase includes the following subset of words in the word collection" 
 p substrings(string_test, dictionary)
