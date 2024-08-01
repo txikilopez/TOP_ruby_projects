@@ -10,11 +10,11 @@ def caesar_cipher(string, shift)
     is_upcase = letter.upcase == letter
     if alphabet.include?(letter.downcase)
       index = alphabet.find_index(letter.downcase).to_i
-      modified_index = index + shift
+      modified_index = (index + shift) % alphabet_length
 
-      if modified_index > alphabet_length
-        modified_index = modified_index - alphabet_length
-      end
+      # if modified_index > alphabet_length
+      #   modified_index = modified_index % alphabet_length
+      # end
      next is_upcase ? alphabet[modified_index].upcase : alphabet[modified_index]
     end
     letter
