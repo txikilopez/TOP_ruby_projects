@@ -21,8 +21,16 @@ def caesar_cipher(string, shift)
   end.join
 end
 
+puts "Enter the text to cipher"
+string_input = gets.chomp
+
+puts "Enter the shift you want to implement"
+shift_cipher = gets.chomp.to_i
+
+puts "\nyour ciphered message is:"
+ciphered_text = caesar_cipher(string_input,shift_cipher)
+puts ciphered_text
+
 # TestBlock
 # string_test = "What a string!"
 # shift_cipher = 5
-# ciphered_text = caesar_cipher(string_test,shift_cipher)
-# puts ciphered_text
