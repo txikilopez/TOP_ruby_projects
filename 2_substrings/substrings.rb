@@ -1,5 +1,7 @@
 
 def substrings(phrase, word_collection)
+  phrase = phrase.downcase
+  word_collection = word_collection.map {|word| word.downcase}
   word_collection.reduce(Hash.new(0)) do |accum, word|
     if phrase.include?(word)
       accum[word] = accum[word] + 1
@@ -19,5 +21,5 @@ puts "Enter a list of words separated by a comma"
 dictionary = gets.chomp
 dictionary = dictionary.split(", ")
 
-p "the phrase includes the following subset of words in the word collection" 
-p substrings(string_test, dictionary)
+puts "The phrase includes the following subset of words in the word collection" 
+puts substrings(string_test, dictionary)
