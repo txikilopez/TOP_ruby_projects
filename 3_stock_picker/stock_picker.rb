@@ -5,9 +5,6 @@ def stock_picker(daily_prices)
 
   for i in 0..days-1
     for j in i+1..days
-      # puts i
-      # puts j
-      # puts daily_prices
       new_difference = -(daily_prices[i].to_i - daily_prices[j].to_i)
       if new_difference > price_diference
         price_indexes[0] = i
@@ -29,7 +26,7 @@ puts "for a profit of #{prices[days_to_buy[1]].to_i-prices[days_to_buy[0]].to_i}
 
 
 #test block
-# prices = [17,3,6,9,15,8,6,1,10]
+# prices = [17, 3, 6, 9, 15, 8, 6, 1, 10]
 # days_to_buy = stock_picker(prices)
 # p days_to_buy
 # puts "for a profit of #{prices[days_to_buy[1]].to_i-prices[days_to_buy[0]].to_i}"
