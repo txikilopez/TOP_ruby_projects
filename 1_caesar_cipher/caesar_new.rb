@@ -1,17 +1,22 @@
+# frozen_string_literal: true
+
 def caesar_cipher(string, shift)
   shift = shift.to_i
   alphabet = ('a'..'z').to_a
-  alphabet_length = alphabet.length
   string_array = string.split('')
+  engine_caesar(string_array, alphabet, shift)
+end
 
-  string_array.map do |letter|
+def engine_caesar(array, abcd, shift)
+  array.map do |letter|
     is_upcase = letter.upcase == letter
-    if alphabet.include?(letter.downcase)
-      index = alphabet.find_index(letter.downcase).to_i
-      modified_index = (index + shift) % alphabet_length
-      next is_upcase ? alphabet[modified_index].upcase : alphabet[modified_index]
+    if abcd.include?(letter.downcase)
+      index = abcd.find_index(letter.downcase).to_i
+      mod_index = (index + shift) % abcd.length
+      is_upcase ? abcd[mod_index].upcase : abcd[mod_index]
+    else
+      letter
     end
-    letter
   end.join
 end
 
